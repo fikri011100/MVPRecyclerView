@@ -1,26 +1,22 @@
 package com.santriprogrammer.mvp.ui.list;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.bumptech.glide.Glide;
+import com.santriprogrammer.mvp.ui.detail.Detail;
 import com.santriprogrammer.mvp.R;
 import com.santriprogrammer.mvp.model.Pojo.KategoriBean;
 import com.santriprogrammer.mvp.ui.list.Adapter.ViewHolder;
-import com.santriprogrammer.mvp.ui.list.Detail.Detail;
 import com.santriprogrammer.mvp.utils.Helper.Movie;
 import java.util.List;
 
