@@ -1,7 +1,8 @@
-package com.santriprogrammer.mvp.remote;
+package com.santriprogrammer.mvp.repositories;
 
 import android.support.annotation.NonNull;
 import com.santriprogrammer.mvp.model.Pojo;
+import com.santriprogrammer.mvp.model.PojoBaru;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ import java.util.List;
 public interface MainActivityDataResource {
 
 interface MainActivityGetCallback{
-  void onSucces(List<Pojo.KategoriBean> data, String msg);
+  void onSucces(List<PojoBaru.DataBean> data, String msg);
   void onError(String msg);
   void onDataEmpty(String msg);
 }

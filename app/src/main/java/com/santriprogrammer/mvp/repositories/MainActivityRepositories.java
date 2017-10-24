@@ -1,4 +1,4 @@
-package com.santriprogrammer.mvp.remote;
+package com.santriprogrammer.mvp.repositories;
 
 import android.support.annotation.NonNull;
 

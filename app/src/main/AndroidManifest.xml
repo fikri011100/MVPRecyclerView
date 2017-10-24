@@ -18,7 +18,9 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".ui.detail.Detail"></activity>
+    <activity android:name=".ui.detail.Detail" />
+    <activity android:name=".ui.register.Register" />
+    <activity android:name=".ui.perkat.PerkatActivity"></activity>
   </application>
 
 </manifest>

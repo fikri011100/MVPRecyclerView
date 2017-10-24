@@ -1,8 +1,8 @@
-package com.santriprogrammer.mvp.remote;
+package com.santriprogrammer.mvp.repositories;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.util.Log;
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response.ErrorListener;
@@ -13,8 +13,10 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.santriprogrammer.mvp.R;
 import com.santriprogrammer.mvp.model.Pojo;
+import com.santriprogrammer.mvp.model.PojoBaru;
 import com.santriprogrammer.mvp.utils.Helper;
-import com.santriprogrammer.mvp.utils.Helper.Movie;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by fikriimaduddin on 9/26/17.
@@ -23,7 +25,7 @@ import com.santriprogrammer.mvp.utils.Helper.Movie;
 public class MainActivityDataRemote implements MainActivityDataResource {
 
   private Context context;
-  private final static String URL = Helper.Movie.BASE_URL + "getTbKategori.php";
+  private final static String URL = Helper.Movie.BASE_URL + "getfasilitas.php";
 
   public MainActivityDataRemote(Context context) {
     this.context = context;
@@ -36,13 +38,12 @@ public class MainActivityDataRemote implements MainActivityDataResource {
         new Listener<String>() {
           @Override
           public void onResponse(String response) {
-            System.out.println(response);
-            final Pojo pojoList = new Gson().fromJson(response, Pojo.class);
+            final PojoBaru pojoList = new Gson().fromJson(response, PojoBaru.class);
             if (pojoList == null) {
               mainActivityGetCallback.onDataEmpty(context.getString(R.string.empty_data));
             } else {
               mainActivityGetCallback
-                  .onSucces(pojoList.getKategori(), context.getString(R.string.ada_data));
+                  .onSucces(pojoList.getData(), context.getString(R.string.ada_data));
             }
           }
         }, new ErrorListener() {

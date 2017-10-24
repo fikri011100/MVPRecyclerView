@@ -1,9 +1,10 @@
 package com.santriprogrammer.mvp.ui.list;
 
 
-import com.santriprogrammer.mvp.model.Pojo.KategoriBean;
-import com.santriprogrammer.mvp.remote.MainActivityDataResource.MainActivityGetCallback;
-import com.santriprogrammer.mvp.remote.MainActivityRepositories;
+import com.santriprogrammer.mvp.model.PojoBaru;
+import com.santriprogrammer.mvp.repositories.MainActivityDataResource.MainActivityGetCallback;
+import com.santriprogrammer.mvp.repositories.MainActivityRepositories;
+import com.santriprogrammer.mvp.ui.list.MainActivityContract.View;
 import java.util.List;
 
 /**
@@ -15,13 +16,14 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
   MainActivityContract.View view;
   private MainActivityRepositories mainActivityRepositories;
 
-  public MainActivityPresenter(MainActivityRepositories mainActivityRepositories) {
+  public MainActivityPresenter(
+      MainActivityRepositories mainActivityRepositories) {
     this.mainActivityRepositories = mainActivityRepositories;
   }
 
 
   @Override
-  public void onAttachView(MainActivityContract.View view) {
+  public void onAttachView(View view) {
     this.view = view;
   }
 
@@ -33,7 +35,7 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
   public void getData() {
     mainActivityRepositories.getMainActivityList(new MainActivityGetCallback() {
       @Override
-      public void onSucces(List<KategoriBean> data,String msg) {
+      public void onSucces(List<PojoBaru.DataBean> data,String msg) {
         view.onSucces(data,msg);
       }
 

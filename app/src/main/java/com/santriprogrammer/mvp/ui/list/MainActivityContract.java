@@ -2,6 +2,8 @@ package com.santriprogrammer.mvp.ui.list;
 
 import com.santriprogrammer.mvp.base.BasePresenter;
 import com.santriprogrammer.mvp.model.Pojo;
+import com.santriprogrammer.mvp.model.PojoBaru;
+import com.santriprogrammer.mvp.model.PojoPerkat;
 import java.util.List;
 
 /**
@@ -11,7 +13,7 @@ import java.util.List;
 public class MainActivityContract {
 
   public interface View {
-    void onSucces(List<Pojo.KategoriBean> data,String msg);
+    void onSucces(List<PojoBaru.DataBean> data,String msg);
     void onError(String msg);
   }
 
