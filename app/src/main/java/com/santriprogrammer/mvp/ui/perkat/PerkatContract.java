@@ -12,7 +12,7 @@ import java.util.List;
 public class PerkatContract {
 
   public interface PerkatView {
-    void perkatSuccess(List<PojoPerkat.IsiBean> data, String msg);
+    void perkatSuccess(List<PojoPerkat.DataBean> data, String msg);
     void perkatError(String msg);
   }
   public interface PerkatPresenter extends BasePresenter<PerkatView>{

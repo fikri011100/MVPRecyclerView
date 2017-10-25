@@ -11,21 +11,21 @@ import java.util.List;
 public class  Pojo {
 
   /**
-   * kategori : [{"id_kategori":"12","kategori_nama":"234fdg","kategori_gambar":"example.png"},{"id_kategori":"14","kategori_nama":"4352tfdsf","kategori_gambar":"example.png"},{"id_kategori":"4","kategori_nama":"asd1ew12","kategori_gambar":"example.png"},{"id_kategori":"16","kategori_nama":"asdasdasd","kategori_gambar":"example.png"},{"id_kategori":"17","kategori_nama":"asdbaskhvdhkjvqkjhvwjhq","kategori_gambar":"example.png"},{"id_kategori":"9","kategori_nama":"bmnb","kategori_gambar":"example.png"},{"id_kategori":"10","kategori_nama":"dfg","kategori_gambar":"example.png"},{"id_kategori":"11","kategori_nama":"dfgwe32","kategori_gambar":"example.png"},{"id_kategori":"13","kategori_nama":"fghre2","kategori_gambar":"example.png"},{"id_kategori":"18","kategori_nama":"fikri","kategori_gambar":"example.png"},{"id_kategori":"6","kategori_nama":"iougbiblk","kategori_gambar":"example.png"},{"id_kategori":"7","kategori_nama":"lbh ,2","kategori_gambar":"example.png"},{"id_kategori":"5","kategori_nama":"po12e","kategori_gambar":"example.png"},{"id_kategori":"1","kategori_nama":"sd121","kategori_gambar":"example.png"},{"id_kategori":"3","kategori_nama":"sd1uwp","kategori_gambar":"example.png"},{"id_kategori":"15","kategori_nama":"sfdfwer2","kategori_gambar":"example.png"},{"id_kategori":"2","kategori_nama":"shvdy1iu]\\","kategori_gambar":"example.png"},{"id_kategori":"8","kategori_nama":"vbjvjvjh","kategori_gambar":"example.png"}]
-   * status : 1
-   * msg : Data Semua Kategori
+   * data : [{"id_cat":"1","nama_cat":"Makanan","image_cat":"food.jpg"},{"id_cat":"2","nama_cat":"Minuman","image_cat":"drink.png"},{"id_cat":"3","nama_cat":"Sambal","image_cat":"chili.jpg"},{"id_cat":"4","nama_cat":"Makanan Ringan","image_cat":"snack.png"}]
+   * result : 1
+   * msg : semua data kategori
    */
 
-  private String status;
+  private int result;
   private String msg;
-  private List<KategoriBean> kategori;
+  private List<DataBean> data;
 
-  public String getStatus() {
-    return status;
+  public int getResult() {
+    return result;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setResult(int result) {
+    this.result = result;
   }
 
   public String getMsg() {
@@ -36,66 +36,66 @@ public class  Pojo {
     this.msg = msg;
   }
 
-  public List<KategoriBean> getKategori() {
-    return kategori;
+  public List<DataBean> getData() {
+    return data;
   }
 
-  public void setKategori(List<KategoriBean> kategori) {
-    this.kategori = kategori;
+  public void setData(List<DataBean> data) {
+    this.data = data;
   }
 
-  public static class KategoriBean implements Parcelable {
+  public static class DataBean implements Parcelable{
 
     /**
-     * id_kategori : 12
-     * kategori_nama : 234fdg
-     * kategori_gambar : example.png
+     * id_cat : 1
+     * nama_cat : Makanan
+     * image_cat : food.jpg
      */
 
-    private String id_kategori;
-    private String kategori_nama;
-    private String kategori_gambar;
+    private String id_cat;
+    private String nama_cat;
+    private String image_cat;
 
-    protected KategoriBean(Parcel in) {
-      id_kategori = in.readString();
-      kategori_nama = in.readString();
-      kategori_gambar = in.readString();
+    protected DataBean(Parcel in) {
+      id_cat = in.readString();
+      nama_cat = in.readString();
+      image_cat = in.readString();
     }
 
-    public static final Creator<KategoriBean> CREATOR = new Creator<KategoriBean>() {
+    public static final Creator<DataBean> CREATOR = new Creator<DataBean>() {
       @Override
-      public KategoriBean createFromParcel(Parcel in) {
-        return new KategoriBean(in);
+      public DataBean createFromParcel(Parcel in) {
+        return new DataBean(in);
       }
 
       @Override
-      public KategoriBean[] newArray(int size) {
-        return new KategoriBean[size];
+      public DataBean[] newArray(int size) {
+        return new DataBean[size];
       }
     };
 
-    public String getId_kategori() {
-      return id_kategori;
+    public String getId_cat() {
+      return id_cat;
     }
 
-    public void setId_kategori(String id_kategori) {
-      this.id_kategori = id_kategori;
+    public void setId_cat(String id_cat) {
+      this.id_cat = id_cat;
     }
 
-    public String getKategori_nama() {
-      return kategori_nama;
+    public String getNama_cat() {
+      return nama_cat;
     }
 
-    public void setKategori_nama(String kategori_nama) {
-      this.kategori_nama = kategori_nama;
+    public void setNama_cat(String nama_cat) {
+      this.nama_cat = nama_cat;
     }
 
-    public String getKategori_gambar() {
-      return kategori_gambar;
+    public String getImage_cat() {
+      return image_cat;
     }
 
-    public void setKategori_gambar(String kategori_gambar) {
-      this.kategori_gambar = kategori_gambar;
+    public void setImage_cat(String image_cat) {
+      this.image_cat = image_cat;
     }
 
     @Override
@@ -104,10 +104,10 @@ public class  Pojo {
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-      dest.writeString(id_kategori);
-      dest.writeString(kategori_nama);
-      dest.writeString(kategori_gambar);
+    public void writeToParcel(Parcel parcel, int i) {
+      parcel.writeString(id_cat);
+      parcel.writeString(nama_cat);
+      parcel.writeString(image_cat);
     }
   }
 }

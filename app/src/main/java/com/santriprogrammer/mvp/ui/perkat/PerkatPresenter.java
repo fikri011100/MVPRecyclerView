@@ -1,6 +1,6 @@
 package com.santriprogrammer.mvp.ui.perkat;
 
-import com.santriprogrammer.mvp.model.PojoPerkat.IsiBean;
+import com.santriprogrammer.mvp.model.PojoPerkat;
 import com.santriprogrammer.mvp.repositories.PerkatDataResource.PerkatDataCallback;
 import com.santriprogrammer.mvp.repositories.PerkatRepositories;
 import com.santriprogrammer.mvp.ui.perkat.PerkatContract.PerkatView;
@@ -33,8 +33,8 @@ public class PerkatPresenter implements PerkatContract.PerkatPresenter {
   public void getPerkat(String id) {
     repo.getPerkatList(id,new PerkatDataCallback() {
       @Override
-      public void onSuccess(List<IsiBean> data, String msg) {
-
+      public void onSuccess(List<PojoPerkat.DataBean> data, String msg) {
+        view.perkatSuccess(data,msg);
       }
 
       @Override

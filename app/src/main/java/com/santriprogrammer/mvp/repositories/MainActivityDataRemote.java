@@ -25,7 +25,7 @@ import java.util.Map;
 public class MainActivityDataRemote implements MainActivityDataResource {
 
   private Context context;
-  private final static String URL = Helper.Movie.BASE_URL + "getfasilitas.php";
+  private final static String URL = Helper.Movie.BASE_URL + "getkategori.php";
 
   public MainActivityDataRemote(Context context) {
     this.context = context;
@@ -38,7 +38,7 @@ public class MainActivityDataRemote implements MainActivityDataResource {
         new Listener<String>() {
           @Override
           public void onResponse(String response) {
-            final PojoBaru pojoList = new Gson().fromJson(response, PojoBaru.class);
+            final Pojo pojoList = new Gson().fromJson(response, Pojo.class);
             if (pojoList == null) {
               mainActivityGetCallback.onDataEmpty(context.getString(R.string.empty_data));
             } else {

@@ -9,8 +9,8 @@ public class Helper {
   public static final String API_KEY = "0fbe71e66d20ee97f1890874021c471f";
 
   public class Movie{
-    public final static  String BASE_URL = "http://api.santriprogrammer.com/hastabrata/";
-    public final static String GAMBAR = "http://api.santriprogrammer.com/hastabrata/gambar/";
+    public final static  String BASE_URL = "http://api.santriprogrammer.com/ResepMasakan/";
+    public final static String GAMBAR = "http://api.santriprogrammer.com/ResepMasakan/gambar/";
 //    public final static String MOVIE_GET = BASE_URL+MOVIE_URL+"top_rated/";
   }
 

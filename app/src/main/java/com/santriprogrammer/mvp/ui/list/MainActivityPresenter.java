@@ -1,7 +1,7 @@
 package com.santriprogrammer.mvp.ui.list;
 
 
-import com.santriprogrammer.mvp.model.PojoBaru;
+import com.santriprogrammer.mvp.model.Pojo;
 import com.santriprogrammer.mvp.repositories.MainActivityDataResource.MainActivityGetCallback;
 import com.santriprogrammer.mvp.repositories.MainActivityRepositories;
 import com.santriprogrammer.mvp.ui.list.MainActivityContract.View;
@@ -35,7 +35,7 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
   public void getData() {
     mainActivityRepositories.getMainActivityList(new MainActivityGetCallback() {
       @Override
-      public void onSucces(List<PojoBaru.DataBean> data,String msg) {
+      public void onSucces(List<Pojo.DataBean> data,String msg) {
         view.onSucces(data,msg);
       }
 
@@ -51,4 +51,3 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
     });
   }
 }
-

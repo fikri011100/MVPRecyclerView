@@ -10,7 +10,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.santriprogrammer.mvp.R;
 import com.santriprogrammer.mvp.model.PojoPerkat;
-import com.santriprogrammer.mvp.model.PojoPerkat.IsiBean;
 import com.santriprogrammer.mvp.repositories.PerkatRepoInject;
 import com.santriprogrammer.mvp.ui.perkat.PerkatContract.PerkatView;
 import java.util.ArrayList;
@@ -23,8 +22,8 @@ public class PerkatActivity extends AppCompatActivity implements PerkatView {
   RecyclerView rvPerkat;
   PerkatPresenter perkatPresenter;
   AdapterPerkat adapter;
-  ArrayList<PojoPerkat.IsiBean> resultItem;
-  String id;
+  ArrayList<PojoPerkat.DataBean> resultItem;
+  String id, nama;
   private static final String simpan = "simpan";
 
   @Override
@@ -35,13 +34,14 @@ public class PerkatActivity extends AppCompatActivity implements PerkatView {
     perkatPresenter = new PerkatPresenter(PerkatRepoInject.provideToPerkatRepo(getApplicationContext()));
     perkatPresenter.onAttachView(this);
     id = getIntent().getStringExtra("id");
-    Log.i("id",id);
+    nama = getIntent().getStringExtra("judul");
+    setTitle(nama);
     resultItem = new ArrayList<>();
     rvPerkat.setLayoutManager(new LinearLayoutManager(this));
     adapter = new AdapterPerkat(PerkatActivity.this, resultItem);
     rvPerkat.setAdapter(adapter);
     if (savedInstanceState != null){
-      ArrayList<PojoPerkat.IsiBean> resultArray = savedInstanceState.getParcelableArrayList(simpan);
+      ArrayList<PojoPerkat.DataBean> resultArray = savedInstanceState.getParcelableArrayList(simpan);
       this.resultItem.clear();
       this.resultItem.addAll(resultArray);
       adapter.notifyDataSetChanged();
@@ -57,7 +57,7 @@ public class PerkatActivity extends AppCompatActivity implements PerkatView {
   }
 
   @Override
-  public void perkatSuccess(List<IsiBean> data, String msg) {
+  public void perkatSuccess(List<PojoPerkat.DataBean> data, String msg) {
     resultItem.clear();
     resultItem.addAll(data);
     adapter.notifyDataSetChanged();

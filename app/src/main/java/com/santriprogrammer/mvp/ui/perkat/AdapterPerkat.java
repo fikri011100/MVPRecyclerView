@@ -16,7 +16,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.bumptech.glide.Glide;
 import com.santriprogrammer.mvp.R;
-import com.santriprogrammer.mvp.model.PojoPerkat.IsiBean;
+import com.santriprogrammer.mvp.model.PojoPerkat;
+import com.santriprogrammer.mvp.ui.detail.Detail;
 import com.santriprogrammer.mvp.utils.Helper.Movie;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +28,10 @@ import java.util.List;
 
 public class AdapterPerkat extends RecyclerView.Adapter<AdapterPerkat.ViewHolder> {
   Context context;
-  List<IsiBean> data;
+  List<PojoPerkat.DataBean> data;
   ImageView image;
 
-  public AdapterPerkat(PerkatActivity perkatActivity, ArrayList<IsiBean> resultItem) {
+  public AdapterPerkat(PerkatActivity perkatActivity, ArrayList<PojoPerkat.DataBean> resultItem) {
     this.context = perkatActivity;
     this.data = resultItem;
   }
@@ -44,20 +45,19 @@ public class AdapterPerkat extends RecyclerView.Adapter<AdapterPerkat.ViewHolder
 
   @Override
   public void onBindViewHolder(ViewHolder holder, int position) {
-    final IsiBean listitem = data.get(position);
+    final PojoPerkat.DataBean listitem = data.get(position);
     Glide.with(context)
-        .load(Movie.GAMBAR + listitem.getIsi_gambar())
+        .load(Movie.GAMBAR + listitem.getFoto())
         .placeholder(R.mipmap.ic_launcher)
         .into(image);
-    holder.txtJudul.setText(listitem.getIsi_judul());
-    Log.i("id", listitem.getId_kategori());
+    holder.txtJudul.setText(listitem.getNama());
     holder.constraint.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
-        Intent i = new Intent(view.getContext(), PerkatActivity.class);
-        i.putExtra("judul",listitem.getIsi_judul());
-        i.putExtra("gambar",listitem.getIsi_gambar());
-        i.putExtra("detail",listitem.getIsi_keterangan());
+        Intent i = new Intent(view.getContext(), Detail.class);
+        i.putExtra("judul",listitem.getNama());
+        i.putExtra("gambar",listitem.getFoto());
+        i.putExtra("detail",listitem.getDeskripsi());
         view.getContext().startActivity(i);
       }
     });

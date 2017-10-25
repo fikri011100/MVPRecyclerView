@@ -12,7 +12,7 @@ import java.util.List;
 public interface MainActivityDataResource {
 
 interface MainActivityGetCallback{
-  void onSucces(List<PojoBaru.DataBean> data, String msg);
+  void onSucces(List<Pojo.DataBean> data, String msg);
   void onError(String msg);
   void onDataEmpty(String msg);
 }

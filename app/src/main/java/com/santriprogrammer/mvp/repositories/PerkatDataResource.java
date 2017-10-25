@@ -11,7 +11,7 @@ import java.util.List;
 public interface PerkatDataResource {
 
   interface PerkatDataCallback {
-    void onSuccess(List<PojoPerkat.IsiBean> data, String msg);
+    void onSuccess(List<PojoPerkat.DataBean> data, String msg);
     void onError(String msg);
     void onDataEmpty(String msg);
   }

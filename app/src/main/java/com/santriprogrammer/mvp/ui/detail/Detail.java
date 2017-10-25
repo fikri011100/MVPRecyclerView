@@ -10,7 +10,7 @@ import com.santriprogrammer.mvp.utils.Helper.Movie;
 
 public class Detail extends AppCompatActivity {
 
-  String id, nama, gambar;
+  String id, nama, gambar, detail;
   ImageView imgViw;
   TextView txtViw;
 
@@ -23,8 +23,9 @@ public class Detail extends AppCompatActivity {
     id = getIntent().getStringExtra("id");
     nama = getIntent().getStringExtra("nama");
     gambar = getIntent().getStringExtra("gambar");
+    detail = getIntent().getStringExtra("isi");
     getSupportActionBar().setTitle(nama);
-    txtViw.setText(nama);
+    txtViw.setText(detail);
     Glide.with(this)
         .load(Movie.GAMBAR + gambar)
         .placeholder(R.mipmap.ic_launcher)

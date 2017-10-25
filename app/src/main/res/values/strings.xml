@@ -3,5 +3,5 @@
 
   <string name="empty_data">Data Nggak ada</string>
   <string name="ada_data">Data Semua Kategori</string>
-  <string name="ada_perkat">Data Semua Isi</string>
+  <string name="ada_perkat">semua data di object</string>
 </resources>

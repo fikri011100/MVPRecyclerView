@@ -13,7 +13,7 @@ import java.util.List;
 public class MainActivityContract {
 
   public interface View {
-    void onSucces(List<PojoBaru.DataBean> data,String msg);
+    void onSucces(List<Pojo.DataBean> data,String msg);
     void onError(String msg);
   }
 
