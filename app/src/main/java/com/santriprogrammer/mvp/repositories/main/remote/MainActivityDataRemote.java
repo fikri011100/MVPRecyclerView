@@ -1,8 +1,7 @@
-package com.santriprogrammer.mvp.repositories;
+package com.santriprogrammer.mvp.repositories.main.remote;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response.ErrorListener;
@@ -13,10 +12,8 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.santriprogrammer.mvp.R;
 import com.santriprogrammer.mvp.model.Pojo;
-import com.santriprogrammer.mvp.model.PojoBaru;
+import com.santriprogrammer.mvp.repositories.main.MainActivityDataResource;
 import com.santriprogrammer.mvp.utils.Helper;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by fikriimaduddin on 9/26/17.

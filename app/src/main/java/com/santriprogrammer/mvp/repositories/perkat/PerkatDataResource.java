@@ -1,4 +1,4 @@
-package com.santriprogrammer.mvp.repositories;
+package com.santriprogrammer.mvp.repositories.perkat;
 
 import android.support.annotation.NonNull;
 import com.santriprogrammer.mvp.model.PojoPerkat;

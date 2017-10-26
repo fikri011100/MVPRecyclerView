@@ -2,8 +2,8 @@ package com.santriprogrammer.mvp.ui.list;
 
 
 import com.santriprogrammer.mvp.model.Pojo;
-import com.santriprogrammer.mvp.repositories.MainActivityDataResource.MainActivityGetCallback;
-import com.santriprogrammer.mvp.repositories.MainActivityRepositories;
+import com.santriprogrammer.mvp.repositories.main.MainActivityDataResource.MainActivityGetCallback;
+import com.santriprogrammer.mvp.repositories.main.MainActivityRepositories;
 import com.santriprogrammer.mvp.ui.list.MainActivityContract.View;
 import java.util.List;
 

@@ -1,7 +1,11 @@
 package com.santriprogrammer.mvp.ui.list;
 
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,7 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.santriprogrammer.mvp.R;
 import com.santriprogrammer.mvp.model.Pojo;
-import com.santriprogrammer.mvp.repositories.MainRepoInject;
+import com.santriprogrammer.mvp.repositories.main.MainRepoInject;
 import com.santriprogrammer.mvp.ui.list.MainActivityContract.View;
 import java.util.ArrayList;
 import java.util.List;

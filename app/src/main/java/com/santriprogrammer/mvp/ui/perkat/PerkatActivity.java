@@ -9,7 +9,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.santriprogrammer.mvp.R;
 import com.santriprogrammer.mvp.model.PojoPerkat;
-import com.santriprogrammer.mvp.repositories.PerkatRepoInject;
+import com.santriprogrammer.mvp.repositories.perkat.PerkatRepoInject;
 import com.santriprogrammer.mvp.ui.perkat.PerkatContract.PerkatView;
 import java.util.ArrayList;
 import java.util.List;

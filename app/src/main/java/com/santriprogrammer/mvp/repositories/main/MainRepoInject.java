@@ -1,7 +1,7 @@
-package com.santriprogrammer.mvp.repositories;
+package com.santriprogrammer.mvp.repositories.main;
 
 import android.content.Context;
-import com.santriprogrammer.mvp.repositories.MainActivityDataRemote;
+import com.santriprogrammer.mvp.repositories.main.remote.MainActivityDataRemote;
 
 /**
  * Created by fikriimaduddin on 9/27/17.

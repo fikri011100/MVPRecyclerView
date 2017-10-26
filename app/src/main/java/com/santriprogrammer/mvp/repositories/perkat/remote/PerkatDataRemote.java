@@ -1,9 +1,8 @@
-package com.santriprogrammer.mvp.repositories;
+package com.santriprogrammer.mvp.repositories.perkat.remote;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
-import com.android.volley.Request;
 import com.android.volley.Request.Method;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response.ErrorListener;
@@ -14,6 +13,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.santriprogrammer.mvp.R;
 import com.santriprogrammer.mvp.model.PojoPerkat;
+import com.santriprogrammer.mvp.repositories.perkat.PerkatDataResource;
 import com.santriprogrammer.mvp.utils.Helper.Movie;
 import java.util.HashMap;
 import java.util.Map;

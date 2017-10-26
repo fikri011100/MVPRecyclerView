@@ -1,4 +1,4 @@
-package com.santriprogrammer.mvp.repositories;
+package com.santriprogrammer.mvp.repositories.main;
 
 import android.support.annotation.NonNull;
 import com.santriprogrammer.mvp.model.Pojo;

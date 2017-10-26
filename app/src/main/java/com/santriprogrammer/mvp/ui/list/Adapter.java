@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import butterknife.BindView;
@@ -28,6 +30,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
   Context context;
   List<Pojo.DataBean> data;
+  private int lastPosition = -1;
 
   public Adapter(Context context, List<Pojo.DataBean> data) {
     this.data = data;
@@ -58,6 +61,17 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
         view.getContext().startActivity(i);
       }
     });
+    setAnimation(holder.itemView, position);
+  }
+  private void setAnimation(View viewToAnimate, int position)
+  {
+    // If the bound view wasn't previously displayed on screen, it's animated
+    if (position > lastPosition)
+    {
+      Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+      viewToAnimate.startAnimation(animation);
+      lastPosition = position;
+    }
   }
 
   @Override

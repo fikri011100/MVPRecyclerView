@@ -1,9 +1,11 @@
 package com.santriprogrammer.mvp.ui.perkat;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -55,10 +57,12 @@ public class AdapterPerkat extends RecyclerView.Adapter<AdapterPerkat.ViewHolder
       @Override
       public void onClick(View view) {
         Intent i = new Intent(view.getContext(), Detail.class);
+        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+            (Activity) view.getContext(),image, "img");
         i.putExtra("judul",listitem.getNama());
         i.putExtra("gambar",listitem.getFoto());
         i.putExtra("detail",listitem.getDeskripsi());
-        view.getContext().startActivity(i);
+        view.getContext().startActivity(i, optionsCompat.toBundle());
       }
     });
   }

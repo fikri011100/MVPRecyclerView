@@ -1,6 +1,7 @@
-package com.santriprogrammer.mvp.repositories;
+package com.santriprogrammer.mvp.repositories.perkat;
 
 import android.content.Context;
+import com.santriprogrammer.mvp.repositories.perkat.remote.PerkatDataRemote;
 
 /**
  * Created by fikriimaduddin on 10/2/17.

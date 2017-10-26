@@ -1,8 +1,8 @@
 package com.santriprogrammer.mvp.ui.perkat;
 
 import com.santriprogrammer.mvp.model.PojoPerkat;
-import com.santriprogrammer.mvp.repositories.PerkatDataResource.PerkatDataCallback;
-import com.santriprogrammer.mvp.repositories.PerkatRepositories;
+import com.santriprogrammer.mvp.repositories.perkat.PerkatDataResource.PerkatDataCallback;
+import com.santriprogrammer.mvp.repositories.perkat.PerkatRepositories;
 import com.santriprogrammer.mvp.ui.perkat.PerkatContract.PerkatView;
 import java.util.List;
 
